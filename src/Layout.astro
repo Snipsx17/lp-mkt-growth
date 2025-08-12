@@ -1,0 +1,28 @@
+---
+import "./styles/global.css";
+
+interface Props {
+  pageTitle: string;
+  lang: string;
+}
+
+const { pageTitle, lang } = Astro.props;
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://wam.global/favicon/favicon-32x32.png"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="bg-main-black">
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

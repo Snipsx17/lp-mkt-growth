@@ -1,0 +1,53 @@
+---
+import Carousel from "./carousel/Carousel";
+import Slide from "./carousel/Slide";
+---
+
+<header
+  class="relative bg-size-[130%] bg-position-[center_-150px] py-[60px]"
+  style="background-image: url('https://go.pardot.com/l/876061/2025-08-11/qqd1n/876061/17549520271dIETIQ6/header_bg.webp');"
+>
+  <div class="flex items-center justify-center mb-6">
+    <img
+      src="https://go.pardot.com/l/876061/2025-08-11/qqd1v/876061/1754952539Y2qkJQ2h/logo_wam.webp"
+      alt="logo WAM"
+      class="w-[300px]"
+    />
+  </div>
+
+  {/* slider */}
+  <div>
+    <Carousel client:load>
+      <Slide
+        image="https://go.pardot.com/l/876061/2025-08-11/qqd1g/876061/1754952027cwvMdF9L/img_1.webp"
+        alt="slide-1"
+      />
+      <Slide
+        image="https://go.pardot.com/l/876061/2025-08-11/qqd1k/876061/1754952027GUau0MsJ/img_2.webp"
+        alt="slide-1"
+      />
+      <Slide
+        image="https://go.pardot.com/l/876061/2025-08-11/qqd1r/876061/1754952027EtruwHfa/img_3.webp"
+        alt="slide-1"
+      />
+    </Carousel>
+  </div>
+
+  <div class="flex items-center justify-center flex-col">
+    <p class="text-white max-w-[800px] text-center z-10 text-lg mb-7">
+      Presentamos una nueva forma de entender el CRM. <br /> Una visión más ágil,
+      más integrada, más enfocada en hacer crecer el negocio. <br />Ahora puedes
+      volver a verlo. O descubrirlo por primera vez.
+    </p>
+
+    <a
+      class="bg-main-red py-[15px] px-[50px] z-10 text-white font-xl uppercase"
+      href="#"><span>ver evento</span></a
+    >
+  </div>
+  {/* gradient */}
+  <div
+    class="h-[250px] absolute bottom-0 left-0 z-0 right-0 bg-gradient-to-t from-main-black to-transparent"
+  >
+  </div>
+</header>
