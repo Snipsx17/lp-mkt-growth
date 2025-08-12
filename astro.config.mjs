@@ -18,12 +18,17 @@ export default defineConfig({
       assetsInlineLimit: 100000, // Inline assets pequeños
       rollupOptions: {
         output: {
-          entryFileNames: 'assets/[name].js',
-          chunkFileNames: 'assets/[name].js',
-          assetFileNames: 'assets/[name].[ext]',
-          manualChunks: () => "everything.js",
+          entryFileNames: "assets/bundle.js",
+          chunkFileNames: "assets/bundle.js",
+          assetFileNames: "assets/[name].[ext]",
+          manualChunks: () => "bundle",
         },
+        // Remover opciones problemáticas
+        preserveEntrySignatures: false,
       },
+      // Configuración de build
+      target: "es2020",
+      lib: false,
     },
   },
 });
