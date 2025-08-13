@@ -1,13 +1,14 @@
 ---
-import Carousel from "./carousel/Carousel";
-import Slide from "./carousel/Slide";
+import Carousel from "./Carousel.astro";
 ---
 
 <header
   class="relative bg-size-[130%] bg-position-[center_-150px] py-[60px]"
   style="background-image: url('https://go.pardot.com/l/876061/2025-08-11/qqd1n/876061/17549520271dIETIQ6/header_bg.webp');"
 >
-  <div class="flex items-center justify-center mb-6">
+
+  <div class="absolute top-0 left-0 right-0 bottom-0 bg-main-black opacity-40 z-0"></div>
+  <div class="relative flex items-center justify-center mb-6 z-10">
     <img
       src="https://go.pardot.com/l/876061/2025-08-11/qqd1v/876061/1754952539Y2qkJQ2h/logo_wam.webp"
       alt="logo WAM"
@@ -17,20 +18,7 @@ import Slide from "./carousel/Slide";
 
   {/* slider */}
   <div>
-    <Carousel client:load>
-      <Slide
-        image="https://go.pardot.com/l/876061/2025-08-11/qqd1g/876061/1754952027cwvMdF9L/img_1.webp"
-        alt="slide-1"
-      />
-      <Slide
-        image="https://go.pardot.com/l/876061/2025-08-11/qqd1k/876061/1754952027GUau0MsJ/img_2.webp"
-        alt="slide-1"
-      />
-      <Slide
-        image="https://go.pardot.com/l/876061/2025-08-11/qqd1r/876061/1754952027EtruwHfa/img_3.webp"
-        alt="slide-1"
-      />
-    </Carousel>
+    <Carousel />
   </div>
 
   <div class="flex items-center justify-center flex-col">

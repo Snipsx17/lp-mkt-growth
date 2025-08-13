@@ -1,34 +1,44 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
+// astro.config.mjs
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
 
-// https://astro.build/config
 export default defineConfig({
+  integrations: [],
   output: "static",
-  integrations: [react()],
   build: {
-    inlineStylesheets: "always", // Inline todos los CSS
+    inlineStylesheets: "never",
     assets: "assets",
-    assetsPrefix: "./", // Rutas relativas
+    assetsPrefix: "./",
   },
   vite: {
     plugins: [tailwindcss()],
     build: {
-      assetsInlineLimit: 100000, // Inline assets pequeños
+      cssCodeSplit: false,
       rollupOptions: {
         output: {
-          entryFileNames: "assets/bundle.js",
-          chunkFileNames: "assets/bundle.js",
-          assetFileNames: "assets/[name].[ext]",
-          manualChunks: () => "bundle",
+          entryFileNames: "assets/main.js",
+          chunkFileNames: "assets/main.js",
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.name && assetInfo.name.endsWith(".css")) {
+              return "assets/styles.css";
+            }
+            return "assets/[name].[ext]";
+          },
+          manualChunks: () => "main",
         },
-        // Remover opciones problemáticas
-        preserveEntrySignatures: false,
+        // Configuraciones clave para evitar re-exportaciones
+        preserveEntrySignatures: "allow-extension",
+        treeshake: {
+          moduleSideEffects: false,
+          propertyReadSideEffects: false,
+        },
+        external: [], // No externalizar nada
       },
-      // Configuración de build
-      target: "es2020",
-      lib: false,
+      // Configuración adicional
+      target: "es2018",
+      // Importante: deshabilitar code splitting
+      chunkSizeWarningLimit: 10000,
     },
   },
 });

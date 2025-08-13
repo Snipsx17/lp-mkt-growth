@@ -1,6 +1,6 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState } from "react";
 
-export default function Carousel({ children }: { children: ReactNode}) {
+export default function Carousel() {
     const [currentIndex, setCurrentIndex ] = useState(0);
 
     useEffect(() => {
@@ -19,7 +19,27 @@ export default function Carousel({ children }: { children: ReactNode}) {
           width: "240vw", // 3 × 80vw
         }}
       >
-        {children}
+        <div className="w-[70vw] h-full flex items-center relative mx-[5vw]">
+          <img
+            className="w-full"
+            src="https://go.pardot.com/l/876061/2025-08-11/qqd1g/876061/1754952027cwvMdF9L/img_1.webp"
+            alt="slide-1"
+          />
+        </div>
+        <div className="w-[70vw] h-full flex items-center relative mx-[5vw]">
+          <img
+            className="w-full"
+            src="https://go.pardot.com/l/876061/2025-08-11/qqd1k/876061/1754952027GUau0MsJ/img_2.webp"
+            alt="slide-2"
+          />
+        </div>
+        <div className="w-[70vw] h-full flex items-center relative mx-[5vw]">
+          <img
+            className="w-full"
+            src="https://go.pardot.com/l/876061/2025-08-11/qqd1r/876061/1754952027EtruwHfa/img_3.webp"
+            alt="slide-3"
+          />
+        </div>
       </div>
     </div>
   );
