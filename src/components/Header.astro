@@ -1,13 +1,15 @@
 ---
-import Carousel from "./Carousel.astro";
+import Carousel from "@/components/Carousel.astro";
 ---
 
 <header
   class="relative bg-size-[130%] bg-position-[center_-150px] py-[60px]"
   style="background-image: url('https://go.pardot.com/l/876061/2025-08-11/qqd1n/876061/17549520271dIETIQ6/header_bg.webp');"
 >
-
-  <div class="absolute top-0 left-0 right-0 bottom-0 bg-main-black opacity-40 z-0"></div>
+  <div
+    class="absolute top-0 left-0 right-0 bottom-0 bg-main-black opacity-40 z-0"
+  >
+  </div>
   <div class="relative flex items-center justify-center mb-6 z-10">
     <img
       src="https://go.pardot.com/l/876061/2025-08-11/qqd1v/876061/1754952539Y2qkJQ2h/logo_wam.webp"
@@ -22,16 +24,24 @@ import Carousel from "./Carousel.astro";
   </div>
 
   <div class="flex items-center justify-center flex-col">
-    <p class="text-white max-w-[800px] text-center z-10 text-lg mb-7">
+    <p
+      class="text-white max-w-[800px] text-center z-10 text-lg mb-7 font-fort-book"
+      pardot-region="text-1"
+      pardot-region-type="wysiwyg"
+      pardot-removable=""
+    >
       Presentamos una nueva forma de entender el CRM. <br /> Una visión más ágil,
       más integrada, más enfocada en hacer crecer el negocio. <br />Ahora puedes
       volver a verlo. O descubrirlo por primera vez.
     </p>
 
-    <a
-      class="bg-main-red py-[15px] px-[50px] z-10 text-white font-xl uppercase"
-      href="#"><span>ver evento</span></a
-    >
+    <div pardot-region="link" pardot-region-type="html" class="z-10 relative">
+      <a
+        class="bg-main-red py-[15px] px-[50px] z-10 text-white uppercase font-neuething text-sm"
+        href="#"
+        pardot-removable="">ver evento</a
+      >
+    </div>
   </div>
   {/* gradient */}
   <div

@@ -1,0 +1,35 @@
+---
+interface Props {
+  img: string;
+  title: string;
+  text: string;
+}
+
+const { img, title, text } = Astro.props;
+---
+
+<li class="flex gap-[40px] mb-[60px]" pardot-removable="">
+  <img
+    class="w-[135px] h-[135px]"
+    src={img}
+    alt="item"
+    pardot-region={title.slice(0, 3)}
+    pardot-region-type="image"
+  />
+  <div class="text-white text-left flex items-start justify-center flex-col">
+    <h3
+      class="font-neuething text-xl mb-3"
+      pardot-region={title.slice(5, 8)}
+      pardot-region-type="wysiwyg"
+    >
+      {title}
+    </h3>
+    <p
+      class="font-fort-book text-base"
+      pardot-region={text.slice(5, 8)}
+      pardot-region-type="wysiwyg"
+    >
+      {text}
+    </p>
+  </div>
+</li>
