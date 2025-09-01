@@ -8,7 +8,10 @@ interface Props {
 const { img, title, text } = Astro.props;
 ---
 
-<li class="flex gap-[40px] mb-[60px]" pardot-removable="">
+<li
+  class="flex flex-col md:flex-row gap-[40px] mb-[60px] items-center"
+  pardot-removable=""
+>
   <img
     class="w-[135px] h-[135px]"
     src={img}
@@ -16,16 +19,18 @@ const { img, title, text } = Astro.props;
     pardot-region={title.slice(0, 3)}
     pardot-region-type="image"
   />
-  <div class="text-white text-left flex items-start justify-center flex-col">
+  <div
+    class="text-white text-left flex md:items-start justify-center flex-col px-8 md:px-0"
+  >
     <h3
-      class="font-neuething text-xl mb-3"
+      class="font-neuething text-xl mb-3 text-center md:text-left"
       pardot-region={title.slice(5, 8)}
       pardot-region-type="wysiwyg"
     >
       {title}
     </h3>
     <p
-      class="font-fort-book text-base"
+      class="font-fort-book md:text-base text-lg"
       pardot-region={text.slice(5, 8)}
       pardot-region-type="wysiwyg"
     >
